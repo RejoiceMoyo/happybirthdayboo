@@ -7,7 +7,7 @@ const timelineItems = [
   {
     id: 1,
     title: "How We Met",
-    description: "In short, ndikuda sadza rangu!😂",
+    description: "In short, ndikuda sadza rangu rawakadya!😂",
     type: "text",
     icon: "💫",
   },

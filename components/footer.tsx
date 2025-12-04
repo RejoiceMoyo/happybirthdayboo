@@ -45,7 +45,7 @@ export default function Footer() {
           {/* Left column */}
           <div className="text-center md:text-left animate-fade-in-up">
             <p className="text-2xl font-semibold mb-2">Made with love</p>
-            <p className="text-primary-foreground/80 text-base">For your 27th birthday</p>
+            <p className="text-primary-foreground/80 text-base">For your 💋th birthday</p>
           </div>
 
           {/* Center - Heart */}
@@ -66,10 +66,6 @@ export default function Footer() {
         {/* Divider */}
         <div className="h-px bg-linear-to-r from-transparent via-white/40 to-transparent mb-8" />
 
-        {/* Bottom text */}
-        {/* <div className="text-center">
-          <p className="text-primary-foreground/75 text-base">Made with endless love and adoration</p>
-        </div> */}
       </div>
     </footer>
   )
