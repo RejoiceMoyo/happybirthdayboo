@@ -97,12 +97,38 @@ var _s = __turbopack_context__.k.signature();
 "use client";
 ;
 ;
-function Hero({ onBeginClick }) {
+function Hero() {
     _s();
     const [hearts, setHearts] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [sparkles, setSparkles] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const heartCounter = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(0);
     const sparkleCounter = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(0);
+    // Audio player state
+    const audioRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const [isPlaying, setIsPlaying] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [volume, setVolume] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0.8);
+    // Replace this with your own audio URL if desired
+    // Local file served from the `public/` folder. Drop your MP3 at `public/background-music.mp3`.
+    const audioUrl = "/background-music.mp3";
+    const handlePlayMusic = ()=>{
+        if (audioRef.current) {
+            if (!isPlaying) {
+                audioRef.current.play();
+                setIsPlaying(true);
+            } else {
+                audioRef.current.pause();
+                setIsPlaying(false);
+            }
+        }
+    };
+    // keep audio volume in sync
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "Hero.useEffect": ()=>{
+            if (audioRef.current) audioRef.current.volume = volume;
+        }
+    }["Hero.useEffect"], [
+        volume
+    ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "Hero.useEffect": ()=>{
             const interval = setInterval({
@@ -156,7 +182,7 @@ function Hero({ onBeginClick }) {
                 className: "absolute top-20 left-10 w-80 h-80 bg-primary/8 rounded-full blur-3xl animate-pulse"
             }, void 0, false, {
                 fileName: "[project]/Desktop/AHBDBABY/components/hero.tsx",
-                lineNumber: 53,
+                lineNumber: 74,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -166,14 +192,14 @@ function Hero({ onBeginClick }) {
                 }
             }, void 0, false, {
                 fileName: "[project]/Desktop/AHBDBABY/components/hero.tsx",
-                lineNumber: 54,
+                lineNumber: 75,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
             }, void 0, false, {
                 fileName: "[project]/Desktop/AHBDBABY/components/hero.tsx",
-                lineNumber: 58,
+                lineNumber: 79,
                 columnNumber: 7
             }, this),
             hearts.map((heart)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -185,7 +211,7 @@ function Hero({ onBeginClick }) {
                     children: "♡"
                 }, heart.id, false, {
                     fileName: "[project]/Desktop/AHBDBABY/components/hero.tsx",
-                    lineNumber: 61,
+                    lineNumber: 82,
                     columnNumber: 9
                 }, this)),
             sparkles.map((sparkle)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -198,7 +224,7 @@ function Hero({ onBeginClick }) {
                     }
                 }, sparkle.id, false, {
                     fileName: "[project]/Desktop/AHBDBABY/components/hero.tsx",
-                    lineNumber: 76,
+                    lineNumber: 97,
                     columnNumber: 9
                 }, this)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -212,7 +238,7 @@ function Hero({ onBeginClick }) {
                                 children: "♡"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/AHBDBABY/components/hero.tsx",
-                                lineNumber: 90,
+                                lineNumber: 111,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -223,13 +249,13 @@ function Hero({ onBeginClick }) {
                                 children: "♡"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/AHBDBABY/components/hero.tsx",
-                                lineNumber: 91,
+                                lineNumber: 112,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/AHBDBABY/components/hero.tsx",
-                        lineNumber: 89,
+                        lineNumber: 110,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -241,7 +267,7 @@ function Hero({ onBeginClick }) {
                         children: "Happy 27th Birthday,"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/AHBDBABY/components/hero.tsx",
-                        lineNumber: 96,
+                        lineNumber: 117,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -253,7 +279,7 @@ function Hero({ onBeginClick }) {
                         children: "My Love, Mitch xoxo"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/AHBDBABY/components/hero.tsx",
-                        lineNumber: 103,
+                        lineNumber: 124,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -265,36 +291,110 @@ function Hero({ onBeginClick }) {
                         children: "A celebration of you, of us, and of everything in between"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/AHBDBABY/components/hero.tsx",
-                        lineNumber: 110,
+                        lineNumber: 131,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
-                        onClick: onBeginClick,
-                        size: "lg",
-                        className: "bg-primary hover:bg-primary/90 hover:shadow-2xl text-primary-foreground px-12 py-8 text-lg rounded-full shadow-xl animate-fade-in-up transition-all duration-300 font-semibold",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up",
                         style: {
                             animationDelay: "0.4s"
                         },
-                        children: "Begin Our Story"
-                    }, void 0, false, {
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                                onClick: handlePlayMusic,
+                                size: "lg",
+                                variant: "secondary",
+                                className: `relative px-10 py-6 rounded-full shadow-xl font-semibold flex items-center gap-3 group ${isPlaying ? 'ring-2 ring-accent' : ''}`,
+                                style: {
+                                    fontFamily: "'Great Vibes', cursive"
+                                },
+                                "aria-label": isPlaying ? 'Pause music' : 'Play music',
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-2xl",
+                                        children: isPlaying ? '⏸️' : '🎵'
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/AHBDBABY/components/hero.tsx",
+                                        lineNumber: 147,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "ml-1",
+                                        children: isPlaying ? 'Pause Music' : 'Play Music'
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/AHBDBABY/components/hero.tsx",
+                                        lineNumber: 148,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/Desktop/AHBDBABY/components/hero.tsx",
+                                lineNumber: 139,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-center gap-3 px-2",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                        htmlFor: "volume",
+                                        className: "text-sm text-foreground/70 hidden sm:inline",
+                                        children: "Volume"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/AHBDBABY/components/hero.tsx",
+                                        lineNumber: 152,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                        id: "volume",
+                                        type: "range",
+                                        min: 0,
+                                        max: 1,
+                                        step: 0.01,
+                                        value: volume,
+                                        onChange: (e)=>setVolume(Number(e.target.value)),
+                                        className: "w-40",
+                                        "aria-label": "Music volume"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/AHBDBABY/components/hero.tsx",
+                                        lineNumber: 153,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/Desktop/AHBDBABY/components/hero.tsx",
+                                lineNumber: 151,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("audio", {
+                                ref: audioRef,
+                                src: audioUrl,
+                                loop: true,
+                                preload: "auto"
+                            }, void 0, false, {
+                                fileName: "[project]/Desktop/AHBDBABY/components/hero.tsx",
+                                lineNumber: 167,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "[project]/Desktop/AHBDBABY/components/hero.tsx",
-                        lineNumber: 117,
+                        lineNumber: 138,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/AHBDBABY/components/hero.tsx",
-                lineNumber: 88,
+                lineNumber: 109,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/AHBDBABY/components/hero.tsx",
-        lineNumber: 49,
+        lineNumber: 70,
         columnNumber: 5
     }, this);
 }
-_s(Hero, "dw30YaS7fEXI7Tef7w1RJV549WQ=");
+_s(Hero, "soP2eK/sJQdtliRGZY5HNY2WH6M=");
 _c = Hero;
 var _c;
 __turbopack_context__.k.register(_c, "Hero");
@@ -1443,9 +1543,7 @@ function Home() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
         className: "min-h-screen",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$components$2f$hero$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                onBeginClick: scrollToTimeline
-            }, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AHBDBABY$2f$components$2f$hero$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/Desktop/AHBDBABY/app/page.tsx",
                 lineNumber: 19,
                 columnNumber: 7

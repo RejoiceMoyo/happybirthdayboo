@@ -5,15 +5,36 @@ import type React from "react"
 import { useEffect, useState, useRef } from "react"
 import { Button } from "@/components/ui/button"
 
-interface HeroProps {
-  onBeginClick: () => void
-}
-
-export default function Hero({ onBeginClick }: HeroProps) {
+export default function Hero() {
   const [hearts, setHearts] = useState<Array<{ id: number; left: number; delay: number }>>([])
   const [sparkles, setSparkles] = useState<Array<{ id: number; x: number; y: number }>>([])
   const heartCounter = useRef(0)
   const sparkleCounter = useRef(0)
+  // Audio player state
+  const audioRef = useRef<HTMLAudioElement | null>(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [volume, setVolume] = useState(0.8)
+
+  // Replace this with your own audio URL if desired
+  // Local file served from the `public/` folder. Drop your MP3 at `public/background-music.mp3`.
+  const audioUrl = "/background-music.mp3"
+
+  const handlePlayMusic = () => {
+    if (audioRef.current) {
+      if (!isPlaying) {
+        audioRef.current.play()
+        setIsPlaying(true)
+      } else {
+        audioRef.current.pause()
+        setIsPlaying(false)
+      }
+    }
+  }
+
+  // keep audio volume in sync
+  useEffect(() => {
+    if (audioRef.current) audioRef.current.volume = volume
+  }, [volume])
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -114,14 +135,58 @@ export default function Hero({ onBeginClick }: HeroProps) {
           A celebration of you, of us, and of everything in between
         </p>
 
-        <Button
-          onClick={onBeginClick}
-          size="lg"
-          className="bg-primary hover:bg-primary/90 hover:shadow-2xl text-primary-foreground px-12 py-8 text-lg rounded-full shadow-xl animate-fade-in-up transition-all duration-300 font-semibold"
-          style={{ animationDelay: "0.4s" }}
-        >
-          Begin Our Story
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+          {/* Play button (icon only, no text) */}
+          <Button
+            onClick={handlePlayMusic}
+            size="lg"
+            variant="secondary"
+            className={`relative px-8 py-4 rounded-full shadow-xl font-semibold flex items-center gap-2 ${isPlaying ? 'ring-2 ring-accent' : ''}`}
+            style={{ fontFamily: "'Great Vibes', cursive" }}
+            aria-label={isPlaying ? 'Pause music' : 'Play music'}
+          >
+            <span className="text-2xl">{isPlaying ? '⏸️' : '🎵'}</span>
+            <span className="ml-1 text-lg">{isPlaying ? 'Pause Music' : 'Play Music'}</span>
+          </Button>
+
+          {/* Compact vertical volume control placed very close to the play button. No text label. */}
+          <div className="flex items-center gap-1 px-1">
+            <div className="flex flex-col items-center space-y-1">
+              {/* Volume icon (speaker) */}
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-foreground/90" aria-hidden style={{ position: 'relative', zIndex: 10 }}>
+                <path d="M11.54 3.11 6.9 6.59H3a1 1 0 0 0-1 1v6.82a1 1 0 0 0 1 1h3.9l4.64 3.48A1 1 0 0 0 14 19V5a1 1 0 0 0-2.46-1.89z" />
+                <path d="M16.5 8.5a4.5 4.5 0 0 1 0 7" stroke="currentColor" strokeWidth="0" />
+              </svg>
+
+              {/* Short vertical slider: rotate a short horizontal range input */}
+              <input
+                id="volume"
+                type="range"
+                min={0}
+                max={1}
+                step={0.01}
+                value={volume}
+                onChange={(e) => setVolume(Number(e.target.value))}
+                aria-label="Music volume"
+                style={{
+                  width: 44,
+                  height: 6,
+                  transform: 'rotate(-90deg)',
+                  transformOrigin: 'center',
+                  WebkitAppearance: 'none',
+                  appearance: 'none',
+                  marginTop: 8,
+                  position: 'relative',
+                  zIndex: 0,
+                }}
+                className="rounded-full bg-gray-200"
+              />
+            </div>
+          </div>
+
+          {/* Hidden audio element */}
+          <audio ref={audioRef} src={audioUrl} loop preload="auto" />
+        </div>
       </div>
     </section>
   )

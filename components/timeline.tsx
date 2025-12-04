@@ -63,36 +63,36 @@ const Timeline = forwardRef<HTMLDivElement>((_, ref) => {
         </h2>
 
         <div className="relative">
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-linear-to-b from-primary via-accent via-50% to-primary shadow-lg" />
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-linear-to-b from-primary via-accent via-50% to-primary shadow-lg hidden md:block" />
 
           {/* Timeline items */}
-          <div className="space-y-20">
+          <div className="space-y-12 md:space-y-20">
             {timelineItems.map((item, index) => (
               <div
                 key={item.id}
-                className={`flex ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"} gap-12 animate-fade-in-up`}
+                className={`flex flex-col md:flex-row ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} md:gap-12 gap-6 items-start animate-fade-in-up`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Content */}
-                <div className="w-1/2">
-                  <Card className="p-8 bg-card hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 border border-primary/10 shadow-lg card-luxury">
+                <div className="w-full md:w-1/2">
+                  <Card className="p-6 md:p-8 bg-card hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 border border-primary/10 shadow-lg card-luxury">
                     <div className="flex items-start gap-4">
-                      <div className="text-4xl shrink-0">{item.icon}</div>
+                      <div className="text-3xl md:text-4xl shrink-0">{item.icon}</div>
                       <div>
-                        <h3 className="text-2xl font-bold text-primary mb-3">{item.title}</h3>
-                        <p className="text-foreground/70 leading-relaxed">{item.description}</p>
+                        <h3 className="text-xl md:text-2xl font-bold text-primary mb-2 md:mb-3">{item.title}</h3>
+                        <p className="text-sm md:text-base text-foreground/70 leading-relaxed">{item.description}</p>
                       </div>
                     </div>
                   </Card>
                 </div>
 
-                {/* Timeline dot */}
-                <div className="w-0 flex items-start justify-center pt-10">
+                {/* Timeline dot - center on mobile, inline on md+ */}
+                <div className="w-full md:w-0 flex items-center justify-center pt-2 md:pt-10">
                   <div className="w-7 h-7 bg-linear-to-br from-primary to-accent rounded-full border-4 border-background shadow-lg animate-glow-pulse" />
                 </div>
 
                 {/* Spacer */}
-                <div className="w-1/2" />
+                <div className="w-full md:w-1/2" />
               </div>
             ))}
           </div>
