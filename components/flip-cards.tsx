@@ -17,7 +17,7 @@ const reasons = [
   "The way you are💋",
   "Your passion💋",
   "How you ...💋..💋.",
-  "Younjust being there💋",
+  "You just being there💋",
   "The way you hold my hand, kuma5 in town💋💋!",
   "Your adventurous spirit💋",
   "How you celebrate my victories💋",
