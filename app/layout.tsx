@@ -9,7 +9,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 const _playfairDisplay = Playfair_Display({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Happy 27th Birthday, My Love | A Celebration of Us",
+  title: "Happy 💋th Birthday, My Love | A Celebration of Us",
   description:
     "A beautiful, interactive celebration of love and connection. Discover 27 reasons why you're amazing, our story together, and cherished memories.",
   generator: "v0.app",
