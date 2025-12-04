@@ -33,7 +33,7 @@ export default function FinalMessage() {
       "The way you are💋",
       "Your passion💋",
       "How you ...💋..💋.",
-      "Younjust being there💋",
+      "You just being there💋",
       "The way you hold my hand, kuma5 in town💋💋!",
       "Your adventurous spirit💋",
       "How you celebrate my victories💋",
@@ -112,7 +112,7 @@ export default function FinalMessage() {
           className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-4 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 font-semibold text-lg animate-fade-in-up hover:scale-105"
           style={{ animationDelay: "0.4s" }}
         >
-          Download All Reasons
+          Download All Reasons BABY...💋
         </Button>
       </div>
     </section>
