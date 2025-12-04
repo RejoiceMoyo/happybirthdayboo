@@ -67,9 +67,9 @@ export default function Footer() {
         <div className="h-px bg-linear-to-r from-transparent via-white/40 to-transparent mb-8" />
 
         {/* Bottom text */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <p className="text-primary-foreground/75 text-base">Made with endless love and adoration</p>
-        </div>
+        </div> */}
       </div>
     </footer>
   )

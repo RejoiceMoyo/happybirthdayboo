@@ -88,14 +88,14 @@ export default function FinalMessage() {
         </div>
 
         <h2
-          className="text-6xl md:text-7xl font-bold text-primary mb-10 animate-fade-in-up gradient-text"
+          className="text-3xl md:text-2xl font-bold text-primary mb-10 animate-fade-in-up gradient-text"
           style={{ fontFamily: "Playfair Display", animationDelay: "0.1s" }}
         >
           Here's to a lifetime of more reasons
         </h2>
 
         <p
-          className="text-2xl md:text-3xl text-foreground/85 mb-8 animate-fade-in-up font-light leading-relaxed"
+          className="text-1xl md:text-3xl text-foreground/85 mb-8 animate-fade-in-up font-light leading-relaxed"
           style={{ animationDelay: "0.2s" }}
         >
           I love you today, tomorrow, always and forever.

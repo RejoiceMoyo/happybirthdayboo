@@ -118,7 +118,7 @@ export default function Hero() {
           className="text-5xl md:text-7xl mb-2 animate-fade-in-up"
           style={{ fontFamily: "'Great Vibes', cursive", animationDelay: "0.1s" }}
         >
-          Happy 27th Birthday,
+          Happy 💋th Birthday,
         </h1>
 
         <h2

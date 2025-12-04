@@ -28,7 +28,7 @@ const timelineItems = [
   {
     id: 4,
     title: "Moments That Strengthened Us",
-    description: "Dr visits, or pharmacy, too graphic for a website btw, or my departure🤫🤭??",
+    description: "Dr visits, or pharmacy, too graphic💋 for a website btw, or my departure🤫🤭??",
     type: "text",
     icon: "🌟",
   },

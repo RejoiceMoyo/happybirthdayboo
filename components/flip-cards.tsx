@@ -107,7 +107,7 @@ export default function FlipCards() {
       <div className="max-w-4xl mx-auto relative z-10 px-2 md:px-4">
         <div className="text-center mb-8 md:mb-16">
           <h2
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary mb-3 md:mb-4 animate-fade-in-up"
+            className="text-2xl md:text-2xl lg:text-3xl font-bold text-primary mb-3 md:mb-4 animate-fade-in-up"
             style={{ fontFamily: "Playfair Display, serif" }}
           >
             27 Reasons I Love You
@@ -116,7 +116,7 @@ export default function FlipCards() {
             className="text-base md:text-lg text-foreground/70 animate-fade-in-up font-light px-2"
             style={{ animationDelay: "0.1s" }}
           >
-            A journey through moments that make you irreplaceable
+            A journey through moments that make you so special to me!
           </p>
         </div>
 
